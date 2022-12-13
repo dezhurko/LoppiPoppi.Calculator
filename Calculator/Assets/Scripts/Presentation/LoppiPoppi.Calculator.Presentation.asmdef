@@ -1,0 +1,17 @@
+{
+    "name": "LoppiPoppi.Calculator.Presentation",
+    "rootNamespace": "LoppiPoppi.Calculator.Presentation",
+    "references": [
+        "GUID:4d602b59c2a89b9449cd21a55f0ad883",
+        "GUID:28e2152088473cf4795e3ae29e2873c7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
