@@ -5,12 +5,12 @@ namespace LoppiPoppi.Calculator.Presentation
     public class CalculatorPresenter : IDisposable
     {
         private readonly ICalculatorView view;
-        private readonly CalculatorViewModel viewModel;
+        private readonly CalculatorUseCasesModel useCasesModel;
 
-        public CalculatorPresenter(ICalculatorView view, CalculatorViewModel viewModel)
+        public CalculatorPresenter(ICalculatorView view, CalculatorUseCasesModel useCasesModel)
         {
             this.view = view;
-            this.viewModel = viewModel;
+            this.useCasesModel = useCasesModel;
 
             view.TextChanged += ViewOnTextChanged;
             view.ResultClick += ViewOnResultClick;
@@ -26,28 +26,28 @@ namespace LoppiPoppi.Calculator.Presentation
 
         private void ViewOnResultClick()
         {
-            viewModel.ProcessInput();
+            useCasesModel.ProcessInput();
             UpdateView();
         }
 
         private void ViewOnTextChanged()
         {
-            viewModel.SetInput(view.InputOutputText);
+            useCasesModel.SetInput(view.InputOutputText);
             UpdateView();
         }
 
         private void UpdateView()
         {
-            view.InputOutputText = viewModel.InputOutput;
-            view.TextColor = viewModel.InputOutputColor;
+            view.InputOutputText = useCasesModel.InputOutput;
+            view.TextColor = useCasesModel.InputOutputColor;
         }
         
         private void InitializeView()
         {
-            view.InputOutputText = viewModel.InputOutput;
-            view.TextColor = viewModel.InputOutputColor;
-            view.ButtonText = viewModel.ButtonText;
-            view.PlaceholderText = viewModel.PlaceholderText;
+            view.InputOutputText = useCasesModel.InputOutput;
+            view.TextColor = useCasesModel.InputOutputColor;
+            view.ButtonText = useCasesModel.ButtonText;
+            view.PlaceholderText = useCasesModel.PlaceholderText;
         }
     }
 }

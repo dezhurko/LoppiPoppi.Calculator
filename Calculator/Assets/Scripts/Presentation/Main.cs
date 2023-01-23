@@ -15,7 +15,7 @@ namespace LoppiPoppi.Calculator.Presentation
 
         private void Start()
         {
-            var model = new CalculatorViewModel(new CalculatorEngine(), new Storage(), calculatorViewSettings);
+            var model = new CalculatorUseCasesModel(new CalculatorEngine(), new Storage(), calculatorViewSettings);
             model.LoadState();
             presenter = new CalculatorPresenter(calculatorView, model);
         }

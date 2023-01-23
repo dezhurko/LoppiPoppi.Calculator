@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace LoppiPoppi.Calculator.Presentation
 {
-    public class CalculatorViewModel
+    public class CalculatorUseCasesModel
     {
         private readonly CalculatorViewSettings settings;
         private readonly ICalculatorEngine calculatorEngine;
@@ -30,7 +30,7 @@ namespace LoppiPoppi.Calculator.Presentation
 
         public Color InputOutputColor { get; private set; }
 
-        public CalculatorViewModel(
+        public CalculatorUseCasesModel(
             ICalculatorEngine calculatorEngine, 
             IStorage storage,
             CalculatorViewSettings settings)
